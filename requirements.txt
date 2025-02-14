@@ -1,6 +1,6 @@
 flask
 gunicorn
-pdfplumber
+pypdf2
 python-docx
 langchain
 langchain-astradb
