@@ -1,0 +1,8 @@
+flask
+gunicorn
+pdfplumber
+python-docx
+langchain
+langchain-astradb
+requests
+pandas
