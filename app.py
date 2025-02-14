@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import os
 import tempfile
-import pypdf2
+import pdfplumber
 from docx import Document
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.schema import Document as LC_Document
@@ -27,7 +27,7 @@ def extract_text(file_path, file_type):
     text = ""
     
     if file_type == "pdf":
-        with pypdf2.open(file_path) as pdf:
+        with pdfplumber.open(file_path) as pdf:
             text = "\n".join([page.extract_text() for page in pdf.pages if page.extract_text()])
     
     elif file_type == "docx":
